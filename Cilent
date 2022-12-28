@@ -1,0 +1,43 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Headless And Korblox", "DarkTheme")
+
+--MAIN
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main Stuffs")
+
+
+MainSection:NewButton("Cilent Headless", "Gives Fake Headless", function()
+    game.Players.LocalPlayer.Character.Head.Transparency = 1
+game.Players.LocalPlayer.Character.Head.Transparency = 1
+for i,v in pairs(game.Players.LocalPlayer.Character.Head:GetChildren()) do
+if (v:IsA("Decal")) then
+v.Transparency = 1
+end
+end
+end)
+
+MainSection:NewButton("Cilent Korblox", "Gives Fake Korblox", function()
+    local char = game:GetService("Players").LocalPlayer.Character
+
+-- RIGHT LEG
+char.RightFoot.MeshId = "http://www.roblox.com/asset/?id=902942089"
+char.RightFoot.Transparency = 1
+char.RightLowerLeg.MeshId = "http://www.roblox.com/asset/?id=902942093"
+char.RightLowerLeg.Transparency = 1
+char.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+char.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+end)
+
+--Other
+local Other = Window:NewTab("Toggle GUI")
+local OtherSection = Other:NewSection("Keybind")
+
+OtherSection:NewKeybind("Toggle GUI", "Changes Keybind", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+--Credits
+local Credits = Window:NewTab("Credits")
+local CreditsSection = Credits:NewSection("Credits")
+
+CreditsSection:NewLabel("Made By supreme#9999")
